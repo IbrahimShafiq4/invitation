@@ -7,120 +7,120 @@ const FIREBASE_URL = 'https://ahmad-basmala-invitation-default-rtdb.firebaseio.c
 // ======================== TRANSLATIONS ========================
 const translations = {
   en: {
-    "t-eyebrow":      "— You Are Cordially Invited —",
-    "t-name-ahmed":   "Ahmed",
+    "t-eyebrow": "— You Are Cordially Invited —",
+    "t-name-ahmed": "Ahmed",
     "t-name-basmala": "Basmala",
-    "t-date-text":    "Friday, the Twenty-Sixth of June",
-    "t-cd-days":      "Days",
-    "t-cd-hours":     "Hours",
-    "t-cd-minutes":   "Minutes",
-    "t-cd-seconds":   "Seconds",
-    "t-scroll":       "Scroll",
-    "t-tag-details":  "Save The Date",
-    "t-h-details":    "Wedding Details",
-    "t-dc-date-lbl":  "Date",
-    "t-dc-date-sub":  "Friday",
-    "t-dc-time-lbl":  "Time",
-    "t-dc-time-sub":  "Doors open 5:30 PM",
+    "t-date-text": "Friday, the Twenty-Sixth of June",
+    "t-cd-days": "Days",
+    "t-cd-hours": "Hours",
+    "t-cd-minutes": "Minutes",
+    "t-cd-seconds": "Seconds",
+    "t-scroll": "Scroll",
+    "t-tag-details": "Save The Date",
+    "t-h-details": "Wedding Details",
+    "t-dc-date-lbl": "Date",
+    "t-dc-date-sub": "Friday",
+    "t-dc-time-lbl": "Time",
+    "t-dc-time-sub": "Doors open 5:30 PM",
     "t-dc-dress-lbl": "Dress Code",
     "t-dc-dress-val": "Formal Attire",
     "t-dc-dress-sub": "Gold & Ivory",
-    "t-dc-host-lbl":  "Hosted By",
-    "t-dc-host-sub":  "& Their Families",
-    "t-tag-gallery":  "Our Moments",
-    "t-h-gallery":    "A Love Story",
-    "t-verse":        "And among His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.",
+    "t-dc-host-lbl": "Hosted By",
+    "t-dc-host-sub": "& Their Families",
+    "t-tag-gallery": "Our Moments",
+    "t-h-gallery": "A Love Story",
+    "t-verse": "And among His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.",
     "t-verse-source": "— Quran 30:21",
-    "t-tag-notes":    "Words to Cherish",
-    "t-h-notes":      "Whispers of Love",
-    "t-tag-venue":    "Venue",
-    "t-h-venue":      "Where To Find Us",
-    "t-venue-badge":  "📍 Ceremony & Reception",
-    "t-venue-name":   "Al Sahaba Palace",
-    "t-venue-addr":   "New Cairo, 5th Settlement<br>Cairo, Egypt",
-    "t-directions":   "↗ Get Directions",
-    "t-tag-wishes":   "Leave A Message",
-    "t-h-wishes":     "Wishes For The Couple",
-    "t-form-title":   "✍️ Write Your Wish",
-    "t-footer":       "Made with ❤️ for a day to remember forever",
-    "ln1":  "A great marriage is not when the 'perfect couple' comes together. It is when an imperfect couple learns to enjoy their differences.",
+    "t-tag-notes": "Words to Cherish",
+    "t-h-notes": "Whispers of Love",
+    "t-tag-venue": "Venue",
+    "t-h-venue": "Where To Find Us",
+    "t-venue-badge": "📍 Ceremony & Reception",
+    "t-venue-name": "Al Sahaba Palace",
+    "t-venue-addr": "New Cairo, 5th Settlement<br>Cairo, Egypt",
+    "t-directions": "↗ Get Directions",
+    "t-tag-wishes": "Leave A Message",
+    "t-h-wishes": "Wishes For The Couple",
+    "t-form-title": "✍️ Write Your Wish",
+    "t-footer": "Made with ❤️ for a day to remember forever",
+    "ln1": "A great marriage is not when the 'perfect couple' comes together. It is when an imperfect couple learns to enjoy their differences.",
     "ln1_attr": "— Dave Meurer",
-    "ln2":  "The best thing to hold onto in life is each other.",
+    "ln2": "The best thing to hold onto in life is each other.",
     "ln2_attr": "— Audrey Hepburn",
-    "ln3":  "He created you from one soul, and from that soul He created its mate, that he might find rest in her.",
+    "ln3": "He created you from one soul, and from that soul He created its mate, that he might find rest in her.",
     "ln3_attr": "— Quran 7:189",
-    "ln4":  "In all the world, there is no heart for me like yours.",
+    "ln4": "In all the world, there is no heart for me like yours.",
     "ln4_attr": "— Maya Angelou",
-    "ln5":  "Whatever our souls are made of, his and hers are the same.",
+    "ln5": "Whatever our souls are made of, his and hers are the same.",
     "ln5_attr": "— Emily Brontë",
-    "ln6":  "May your love be modern enough to survive the times, and old-fashioned enough to last forever.",
+    "ln6": "May your love be modern enough to survive the times, and old-fashioned enough to last forever.",
     "ln6_attr": "— A Wedding Toast",
     "delete_confirm": "Delete this wish?",
-    "delete_btn":     "Delete",
-    "no_wishes":      "No wishes yet — be the first!",
-    "error_wishes":   "Error loading wishes",
+    "delete_btn": "Delete",
+    "no_wishes": "No wishes yet — be the first!",
+    "error_wishes": "Error loading wishes",
     "loading_wishes": "Loading wishes...",
-    "fill_form":      "Please fill name & message",
-    "wish_sent":      "Wish sent! Thank you 🎉",
-    "error_send":     "Error sending wish. Please try again."
+    "fill_form": "Please fill name & message",
+    "wish_sent": "Wish sent! Thank you 🎉",
+    "error_send": "Error sending wish. Please try again."
   },
   ar: {
-    "t-eyebrow":      "— أنتم مدعوون بكل حب —",
-    "t-name-ahmed":   "أحمد",
+    "t-eyebrow": "— أنتم مدعوون بكل حب —",
+    "t-name-ahmed": "أحمد",
     "t-name-basmala": "بسملة",
-    "t-date-text":    "الجمعة ٢٦ يونيه",
-    "t-cd-days":      "أيام",
-    "t-cd-hours":     "ساعات",
-    "t-cd-minutes":   "دقايق",
-    "t-cd-seconds":   "ثواني",
-    "t-scroll":       "اسكرول",
-    "t-tag-details":  "احتفلوا معانا",
-    "t-h-details":    "تفاصيل الفرح",
-    "t-dc-date-lbl":  "التاريخ",
-    "t-dc-date-sub":  "الجمعة",
-    "t-dc-time-lbl":  "الميعاد",
-    "t-dc-time-sub":  "الأبواب 5:30 مساءً",
+    "t-date-text": "الجمعة ٢٦ يونيه",
+    "t-cd-days": "أيام",
+    "t-cd-hours": "ساعات",
+    "t-cd-minutes": "دقايق",
+    "t-cd-seconds": "ثواني",
+    "t-scroll": "اسكرول",
+    "t-tag-details": "احتفلوا معانا",
+    "t-h-details": "تفاصيل الفرح",
+    "t-dc-date-lbl": "التاريخ",
+    "t-dc-date-sub": "الجمعة",
+    "t-dc-time-lbl": "الميعاد",
+    "t-dc-time-sub": "الأبواب 5:30 مساءً",
     "t-dc-dress-lbl": "اللبس",
     "t-dc-dress-val": "كلاسيكي أنيق",
     "t-dc-dress-sub": "ذهبي وعاجي",
-    "t-dc-host-lbl":  "العرسان",
-    "t-dc-host-sub":  "و أهلهم",
-    "t-tag-gallery":  "ذكرياتنا",
-    "t-h-gallery":    "حكاية حب",
-    "t-verse":        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+    "t-dc-host-lbl": "العرسان",
+    "t-dc-host-sub": "و أهلهم",
+    "t-tag-gallery": "ذكرياتنا",
+    "t-h-gallery": "حكاية حب",
+    "t-verse": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
     "t-verse-source": "— سورة الروم ٢١",
-    "t-tag-notes":    "كلمات تخلد",
-    "t-h-notes":      "نجوى القلوب",
-    "t-tag-venue":    "المكان",
-    "t-h-venue":      "هتلقونا فين",
-    "t-venue-badge":  "📍 قاعة الأفراح",
-    "t-venue-name":   "قصر السحابة",
-    "t-venue-addr":   "التجمع الخامس، القاهرة الجديدة",
-    "t-directions":   "↗ افتح الخريطة",
-    "t-tag-wishes":   "اكتب كلمة",
-    "t-h-wishes":     "تهانيكم",
-    "t-form-title":   "✍️ اكتب تهنئتك",
-    "t-footer":       "اتعملت بحب في يوم هيتذكر للأبد ❤️",
-    "ln1":  "الزواج العظيم مش إن الاتنين 'المثاليين' يبقوا سوا، ده إن الاتنين غير المثاليين يتعلموا يتبسطوا باختلافاتهم.",
+    "t-tag-notes": "كلمات تخلد",
+    "t-h-notes": "نجوى القلوب",
+    "t-tag-venue": "المكان",
+    "t-h-venue": "هتلقونا فين",
+    "t-venue-badge": "📍 قاعة الأفراح",
+    "t-venue-name": "قصر السحابة",
+    "t-venue-addr": "التجمع الخامس، القاهرة الجديدة",
+    "t-directions": "↗ افتح الخريطة",
+    "t-tag-wishes": "اكتب كلمة",
+    "t-h-wishes": "تهانيكم",
+    "t-form-title": "✍️ اكتب تهنئتك",
+    "t-footer": "اتعملت بحب في يوم هيتذكر للأبد ❤️",
+    "ln1": "الزواج العظيم مش إن الاتنين 'المثاليين' يبقوا سوا، ده إن الاتنين غير المثاليين يتعلموا يتبسطوا باختلافاتهم.",
     "ln1_attr": "— ديف مورير",
-    "ln2":  "أحسن حاجة تتمسك بيها في الحياة هي بعض.",
+    "ln2": "أحسن حاجة تتمسك بيها في الحياة هي بعض.",
     "ln2_attr": "— أودري هيبورن",
-    "ln3":  "خلقكم من نفس واحدة وخلق منها زوجها لتسكن إليها.",
+    "ln3": "خلقكم من نفس واحدة وخلق منها زوجها لتسكن إليها.",
     "ln3_attr": "— سورة الأعراف ١٨٩",
-    "ln4":  "في كل الدنيا، مفيش قلب زي قلبك. في كل الدنيا، مفيش حب زي حبي ليك.",
+    "ln4": "في كل الدنيا، مفيش قلب زي قلبك. في كل الدنيا، مفيش حب زي حبي ليك.",
     "ln4_attr": "— مايا أنجيلو",
-    "ln5":  "مهما كانت أرواحنا معمولة من إيه، روحه وروحها من نفس الشيء.",
+    "ln5": "مهما كانت أرواحنا معمولة من إيه، روحه وروحها من نفس الشيء.",
     "ln5_attr": "— إيميلي برونتي",
-    "ln6":  "يارب يكون حبكم عصري بما يكفي يعدي الأيام، وقديم بما يكفي يعيش للأبد.",
+    "ln6": "يارب يكون حبكم عصري بما يكفي يعدي الأيام، وقديم بما يكفي يعيش للأبد.",
     "ln6_attr": "— نخب زفاف",
     "delete_confirm": "حذف التهنئة؟",
-    "delete_btn":     "حذف",
-    "no_wishes":      "مفيش تهاني لسه — كن أول من يكتب!",
-    "error_wishes":   "مشكلة في تحميل التهاني",
+    "delete_btn": "حذف",
+    "no_wishes": "مفيش تهاني لسه — كن أول من يكتب!",
+    "error_wishes": "مشكلة في تحميل التهاني",
     "loading_wishes": "جارى التحميل...",
-    "fill_form":      "اكتب اسمك ورسالتك!",
-    "wish_sent":      "تم الإرسال! شكراً 🎉",
-    "error_send":     "حصل خطأ. جرب تاني."
+    "fill_form": "اكتب اسمك ورسالتك!",
+    "wish_sent": "تم الإرسال! شكراً 🎉",
+    "error_send": "حصل خطأ. جرب تاني."
   }
 };
 
@@ -135,8 +135,8 @@ function applyTranslations() {
   }
   // Love note cards
   const loveCards = document.querySelectorAll('.love-note-card');
-  const lnKeys = ['ln1','ln2','ln3','ln4','ln5','ln6'];
-  const laKeys = ['ln1_attr','ln2_attr','ln3_attr','ln4_attr','ln5_attr','ln6_attr'];
+  const lnKeys = ['ln1', 'ln2', 'ln3', 'ln4', 'ln5', 'ln6'];
+  const laKeys = ['ln1_attr', 'ln2_attr', 'ln3_attr', 'ln4_attr', 'ln5_attr', 'ln6_attr'];
   loveCards.forEach((card, idx) => {
     if (idx < lnKeys.length) {
       const q = card.querySelector('.ln-quote');
@@ -161,15 +161,15 @@ function updateCountdown() {
   const target = new Date('2026-06-26T18:00:00+02:00');
   const diff = target - new Date();
   if (diff <= 0) {
-    ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => {
+    ['cd-days', 'cd-hours', 'cd-minutes', 'cd-seconds'].forEach(id => {
       document.getElementById(id).innerText = '00';
     });
     return;
   }
-  document.getElementById('cd-days').innerText    = String(Math.floor(diff / 864e5)).padStart(2,'0');
-  document.getElementById('cd-hours').innerText   = String(Math.floor((diff % 864e5) / 36e5)).padStart(2,'0');
-  document.getElementById('cd-minutes').innerText = String(Math.floor((diff % 36e5) / 6e4)).padStart(2,'0');
-  document.getElementById('cd-seconds').innerText = String(Math.floor((diff % 6e4) / 1000)).padStart(2,'0');
+  document.getElementById('cd-days').innerText = String(Math.floor(diff / 864e5)).padStart(2, '0');
+  document.getElementById('cd-hours').innerText = String(Math.floor((diff % 864e5) / 36e5)).padStart(2, '0');
+  document.getElementById('cd-minutes').innerText = String(Math.floor((diff % 36e5) / 6e4)).padStart(2, '0');
+  document.getElementById('cd-seconds').innerText = String(Math.floor((diff % 6e4) / 1000)).padStart(2, '0');
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
@@ -425,13 +425,13 @@ window.addEventListener('resize', () => {
 });
 
 // ======================== GALLERY ========================
-const galleryUrls = Array.from({ length: 8 }, (_, i) => `assets/${String(i + 1).padStart(2,'0')}.jpeg`);
+const galleryUrls = Array.from({ length: 8 }, (_, i) => `assets/${String(i + 1).padStart(2, '0')}.jpeg`);
 const galleryContainer = document.getElementById('gallery-grid');
 galleryUrls.forEach((url, idx) => {
   const div = document.createElement('div');
   div.className = 'gallery-item';
   div.dataset.idx = idx;
-  div.innerHTML = `<img src="${url}" loading="lazy" alt="Wedding photo ${idx+1}"><div class="gallery-overlay"><span class="gallery-zoom-icon">View</span></div>`;
+  div.innerHTML = `<img src="${url}" loading="lazy" alt="Wedding photo ${idx + 1}"><div class="gallery-overlay"><span class="gallery-zoom-icon">View</span></div>`;
   galleryContainer.appendChild(div);
 });
 
@@ -465,7 +465,7 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
 const loveNotesGrid = document.getElementById('love-notes-grid');
 function buildLoveNotes() {
   loveNotesGrid.innerHTML = '';
-  const emojis = ['💍','🌹','🤲','✨','🌸','🥂'];
+  const emojis = ['💍', '🌹', '🤲', '✨', '🌸', '🥂'];
   for (let i = 0; i < 6; i++) {
     const card = document.createElement('div');
     card.className = 'love-note-card';
@@ -486,7 +486,7 @@ buildLoveNotes();
 // ======================== WISHES — Firebase REST API ========================
 let selectedEmoji = '💕';
 let selectedFile = null;
-const emojiOptions = ['💕','💍','🌹','🥂','✨','🎊','🌸','🤲'];
+const emojiOptions = ['💕', '💍', '🌹', '🥂', '✨', '🎊', '🌸', '🤲'];
 const emojiRow = document.getElementById('emoji-row');
 
 emojiOptions.forEach(emoji => {
@@ -505,7 +505,7 @@ emojiOptions.forEach(emoji => {
 document.getElementById('wish-image').addEventListener('change', e => { selectedFile = e.target.files[0]; });
 
 document.getElementById('submit-wish').addEventListener('click', async () => {
-  const name    = document.getElementById('wish-name').value.trim();
+  const name = document.getElementById('wish-name').value.trim();
   const message = document.getElementById('wish-message').value.trim();
   if (!name || !message) { alert(t('fill_form')); return; }
 
@@ -562,26 +562,27 @@ function fileToBase64(file) {
   });
 }
 
+// Load and display wishes
 async function loadWishes() {
   const wall = document.getElementById('wishes-wall');
-  wall.innerHTML = `<div class="wall-loading">✨ ${t('loading_wishes')}</div>`;
+  wall.innerHTML = `<div class="wall-loading">✨ ${translations[currentLang]?.loading_wishes || 'Loading wishes...'}</div>`;
   try {
     const res = await fetch(`${FIREBASE_URL}.json?orderBy="timestamp"&limitToLast=50`);
     if (!res.ok) throw new Error();
     const data = await res.json();
-
     if (!data) {
-      wall.innerHTML = `<div class="wall-loading">✨ ${t('no_wishes')} ✨</div>`;
+      wall.innerHTML = `<div class="wall-loading">✨ ${translations[currentLang]?.no_wishes || 'No wishes yet — be the first!'} ✨</div>`;
       return;
     }
-
-    // Convert to array sorted newest first
+    // Convert to array and sort newest first
     const wishes = Object.entries(data)
       .map(([id, val]) => ({ id, ...val }))
       .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-
     wall.innerHTML = '';
     wishes.forEach(wish => {
+      const date = wish.timestamp
+        ? new Date(wish.timestamp).toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-US')
+        : '';
       const card = document.createElement('div');
       card.className = 'wish-card';
       card.innerHTML = `
@@ -589,31 +590,38 @@ async function loadWishes() {
           <strong class="wc-name">${escapeHtml(wish.name)}</strong>
           <span class="wc-emoji">${wish.emoji || '💕'}</span>
         </div>
-        ${wish.imageUrl ? `<img src="${wish.imageUrl}" class="wc-image" loading="lazy" alt="Wish image">` : ''}
         <p class="wc-message">${escapeHtml(wish.message)}</p>
-        <button class="wc-delete" data-id="${wish.id}">🗑️ ${t('delete_btn')}</button>
+        <div class="wc-timestamp">📅 ${date}</div>
+        <button class="wc-delete" data-id="${wish.id}">🗑️ ${translations[currentLang]?.delete_btn || 'Delete'}</button>
       `;
       wall.appendChild(card);
     });
-
+    // Attach delete handlers
     document.querySelectorAll('.wc-delete').forEach(btn => {
       btn.addEventListener('click', async () => {
-        if (!confirm(t('delete_confirm'))) return;
+        if (!confirm(translations[currentLang]?.delete_confirm || 'Delete this wish?')) return;
         try {
           await fetch(`${FIREBASE_URL}/${btn.dataset.id}.json`, { method: 'DELETE' });
-          loadWishes();
-        } catch { /* ignore */ }
+          loadWishes(); // refresh after deletion
+        } catch (err) { /* ignore */ }
       });
     });
-  } catch {
-    wall.innerHTML = `<div class="wall-loading">⚠️ ${t('error_wishes')}</div>`;
+  } catch (err) {
+    wall.innerHTML = `<div class="wall-loading">⚠️ ${translations[currentLang]?.error_wishes || 'Error loading wishes'}</div>`;
   }
 }
 
+// Helper: escape HTML to prevent XSS
 function escapeHtml(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
+// Initial load
 loadWishes();
 
 // ======================== MUSIC PLAYER ========================
@@ -623,14 +631,14 @@ const playPauseBtn = document.getElementById('btn-play-pause');
 
 playPauseBtn.addEventListener('click', () => {
   if (isPlaying) { audio.pause(); playPauseBtn.innerText = '▶'; }
-  else           { audio.play().catch(() => {}); playPauseBtn.innerText = '⏸'; }
+  else { audio.play().catch(() => { }); playPauseBtn.innerText = '⏸'; }
   isPlaying = !isPlaying;
 });
 document.getElementById('music-fab').addEventListener('click', () =>
   document.getElementById('music-panel').classList.toggle('open')
 );
 document.getElementById('btn-skip-back').addEventListener('click', () => audio.currentTime -= 10);
-document.getElementById('btn-skip-fwd').addEventListener('click',  () => audio.currentTime += 10);
+document.getElementById('btn-skip-fwd').addEventListener('click', () => audio.currentTime += 10);
 document.getElementById('volume-slider').addEventListener('input', e => audio.volume = e.target.value / 100);
 document.getElementById('ctrl-speed').addEventListener('input', e => audio.playbackRate = parseFloat(e.target.value));
 
@@ -652,7 +660,7 @@ document.querySelectorAll('.ctrl-swatch').forEach(sw => {
     document.querySelectorAll('.ctrl-swatch').forEach(s => s.classList.remove('active'));
     sw.classList.add('active');
     const root = document.documentElement;
-    if (sw.dataset.gold)  root.style.setProperty('--gold',  sw.dataset.gold);
+    if (sw.dataset.gold) root.style.setProperty('--gold', sw.dataset.gold);
     if (sw.dataset.gold2) root.style.setProperty('--gold2', sw.dataset.gold2);
     if (sw.dataset.gold3) root.style.setProperty('--gold3', sw.dataset.gold3);
     if (sw.dataset.gold4) root.style.setProperty('--gold4', sw.dataset.gold4);
@@ -704,25 +712,25 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // Hero entrance
-gsap.fromTo('.hero-eyebrow',    { opacity:0, y:20 }, { opacity:1, y:0, duration:1,   delay:.2  });
-gsap.fromTo('.hero-names',      { opacity:0, y:45 }, { opacity:1, y:0, duration:1.3, delay:.5  });
-gsap.fromTo('.hero-ornament',   { opacity:0 },       { opacity:1,       duration:.9, delay:1   });
-gsap.fromTo('.hero-date-text',  { opacity:0 },       { opacity:1,       duration:.8, delay:1.1 });
-gsap.fromTo('.hero-year',       { opacity:0, y:15 }, { opacity:1, y:0, duration:.8, delay:1.25 });
-gsap.fromTo('.countdown-wrap',  { opacity:0, y:20 }, { opacity:1, y:0, duration:.9, delay:1.4  });
-gsap.fromTo('.scroll-cue',      { opacity:0 },       { opacity:1,       duration:.7, delay:1.7  });
+gsap.fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: .2 });
+gsap.fromTo('.hero-names', { opacity: 0, y: 45 }, { opacity: 1, y: 0, duration: 1.3, delay: .5 });
+gsap.fromTo('.hero-ornament', { opacity: 0 }, { opacity: 1, duration: .9, delay: 1 });
+gsap.fromTo('.hero-date-text', { opacity: 0 }, { opacity: 1, duration: .8, delay: 1.1 });
+gsap.fromTo('.hero-year', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: .8, delay: 1.25 });
+gsap.fromTo('.countdown-wrap', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .9, delay: 1.4 });
+gsap.fromTo('.scroll-cue', { opacity: 0 }, { opacity: 1, duration: .7, delay: 1.7 });
 
 // Scroll-triggered
 gsap.utils.toArray('.detail-card, .venue-card, .map-wrapper, .wish-form-card, .love-note-card').forEach((el, i) => {
-  gsap.fromTo(el, { opacity:0, y:35 }, {
-    opacity:1, y:0, duration:.95,
-    scrollTrigger: { trigger: el, start:'top 87%' },
+  gsap.fromTo(el, { opacity: 0, y: 35 }, {
+    opacity: 1, y: 0, duration: .95,
+    scrollTrigger: { trigger: el, start: 'top 87%' },
     delay: (i % 3) * .08
   });
 });
-gsap.fromTo('.wedding-quote', { opacity:0, y:25 }, {
-  opacity:1, y:0, duration:1.2,
-  scrollTrigger: { trigger:'.quote-section', start:'top 72%' }
+gsap.fromTo('.wedding-quote', { opacity: 0, y: 25 }, {
+  opacity: 1, y: 0, duration: 1.2,
+  scrollTrigger: { trigger: '.quote-section', start: 'top 72%' }
 });
 
 // ======================== INIT ========================
