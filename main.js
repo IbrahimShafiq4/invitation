@@ -502,8 +502,6 @@ emojiOptions.forEach(emoji => {
   emojiRow.appendChild(btn);
 });
 
-document.getElementById('wish-image').addEventListener('change', e => { selectedFile = e.target.files[0]; });
-
 document.getElementById('submit-wish').addEventListener('click', async () => {
   const name = document.getElementById('wish-name').value.trim();
   const message = document.getElementById('wish-message').value.trim();
@@ -537,7 +535,6 @@ document.getElementById('submit-wish').addEventListener('click', async () => {
 
     document.getElementById('wish-name').value = '';
     document.getElementById('wish-message').value = '';
-    document.getElementById('wish-image').value = '';
     selectedFile = null;
 
     const msgDiv = document.getElementById('form-message');
