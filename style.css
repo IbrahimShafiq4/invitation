@@ -150,7 +150,15 @@ body {
 }
 
 [data-theme="light"] .hero-overlay {
-    background: radial-gradient(ellipse at center, rgba(251,246,238,.05) 0%, rgba(251,246,238,.6) 100%);
+    background: radial-gradient(ellipse at center, rgba(251,246,238,.05) 0%, rgba(251,246,238,.72) 100%);
+}
+
+[data-theme="light"] .hero-names {
+    text-shadow: 0 2px 20px rgba(180,140,50,.25);
+}
+
+[data-theme="light"] .cdown-num {
+    text-shadow: 0 2px 12px rgba(180,140,50,.3);
 }
 
 .hero-content {
@@ -341,20 +349,34 @@ body {
     text-align: center;
 }
 
-/* subtle frosted backdrop per section */
+/* Dark mode: semi-transparent dark veil so 3D shows through softly */
 .section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(7,2,15,.45);
-    backdrop-filter: blur(0px);
+    background: rgba(7,2,15,.52);
     pointer-events: none;
     z-index: -1;
 }
 
+/* Light mode: rich warm paper-like background with golden warmth */
 [data-theme="light"] .section::before {
-    background: rgba(251,246,238,.55);
+    background: linear-gradient(160deg, rgba(255,252,245,.97) 0%, rgba(252,246,232,.96) 100%);
 }
+
+/* Light mode: alternating section tones for visual rhythm */
+[data-theme="light"] .section:nth-child(even)::before {
+    background: linear-gradient(160deg, rgba(255,248,232,.97) 0%, rgba(255,252,245,.96) 100%);
+}
+
+/* Light mode section decorative top border */
+[data-theme="light"] .section {
+    border-top: 1px solid rgba(201,168,76,.12);
+}
+
+    [data-theme="light"] .section:first-child {
+        border-top: none;
+    }
 
 .section-tag {
     display: inline-block;
@@ -369,8 +391,9 @@ body {
 }
 
 [data-theme="light"] .section-tag {
-    border-color: rgba(180,140,50,.35);
-    background: rgba(201,168,76,.07);
+    border-color: rgba(180,140,50,.4);
+    background: rgba(201,168,76,.09);
+    color: var(--gold3);
 }
 
 .section-heading {
@@ -413,8 +436,9 @@ body {
 }
 
 [data-theme="light"] .detail-card {
-    border-color: rgba(180,140,50,.2);
-    box-shadow: 0 2px 20px rgba(0,0,0,.06);
+    background: linear-gradient(145deg, #fff 0%, #fff8ee 100%);
+    border-color: rgba(180,140,50,.25);
+    box-shadow: 0 4px 24px rgba(140,100,20,.1), 0 1px 4px rgba(0,0,0,.05);
 }
 
 .detail-card::before {
@@ -425,10 +449,19 @@ body {
     pointer-events: none;
 }
 
+[data-theme="light"] .detail-card::before {
+    background: linear-gradient(135deg, rgba(201,168,76,.06), transparent 60%);
+}
+
 .detail-card:hover {
     transform: translateY(-8px);
     border-color: rgba(192,132,252,.55);
     box-shadow: var(--glow);
+}
+
+[data-theme="light"] .detail-card:hover {
+    border-color: rgba(180,140,50,.5);
+    box-shadow: 0 8px 32px rgba(140,100,20,.18);
 }
 
 .dc-icon-wrap {
@@ -557,6 +590,15 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+/* Light mode: add decorative inner box */
+[data-theme="light"] .quote-inner {
+    background: linear-gradient(135deg, rgba(255,252,240,.9), rgba(255,248,225,.8));
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: 32px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 32px rgba(140,100,20,.08);
 }
 
 .quote-ornament {
@@ -592,112 +634,6 @@ body {
 }
 
 /* ======================================================
-   LOVE NOTES
-   ====================================================== */
-.love-notes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 1.8rem;
-    margin-top: 2.5rem;
-}
-
-.love-note-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(192,132,252,.12);
-    border-radius: 28px;
-    padding: 2rem 1.8rem;
-    backdrop-filter: blur(14px);
-    opacity: 0;
-    transform: translateY(25px);
-    transition: var(--tr);
-    position: relative;
-    overflow: hidden;
-    text-align: left;
-}
-
-[data-lang="ar"] .love-note-card {
-    text-align: right;
-}
-
-[data-theme="light"] .love-note-card {
-    border-color: rgba(180,140,50,.18);
-    box-shadow: 0 2px 16px rgba(0,0,0,.05);
-}
-
-.love-note-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg,transparent,var(--gold),transparent);
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-.love-note-card:hover {
-    border-color: rgba(192,132,252,.42);
-    transform: translateY(-5px);
-    box-shadow: var(--glow);
-}
-
-    .love-note-card:hover::after {
-        opacity: 1;
-    }
-
-.ln-top {
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    margin-bottom: 1.2rem;
-}
-
-.ln-emoji-wrap {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg,rgba(192,132,252,.2),rgba(126,34,206,.1));
-    border: 1px solid rgba(192,132,252,.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-}
-
-[data-theme="light"] .ln-emoji-wrap {
-    border-color: rgba(180,140,50,.3);
-}
-
-.ln-divider {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right,rgba(192,132,252,.3),transparent);
-}
-
-[data-theme="light"] .ln-divider {
-    background: linear-gradient(to right,rgba(180,140,50,.3),transparent);
-}
-
-.ln-quote {
-    font-style: italic;
-    font-size: 1rem;
-    line-height: 1.75;
-    color: var(--text-primary);
-    opacity: .9;
-    margin-bottom: 1rem;
-}
-
-.ln-attr {
-    font-size: .63rem;
-    letter-spacing: .2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    opacity: .8;
-}
-
-/* ======================================================
    LOCATION
    ====================================================== */
 .location-layout {
@@ -725,8 +661,9 @@ body {
 }
 
 [data-theme="light"] .venue-card {
-    border-color: rgba(180,140,50,.2);
-    box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    background: linear-gradient(145deg, #fff 0%, #fffbf0 100%);
+    border-color: rgba(180,140,50,.28);
+    box-shadow: 0 6px 32px rgba(140,100,20,.12), 0 1px 6px rgba(0,0,0,.05);
 }
 
 .venue-card::before {
@@ -738,6 +675,10 @@ body {
     height: 130px;
     background: radial-gradient(circle,rgba(192,132,252,.12),transparent 70%);
     pointer-events: none;
+}
+
+[data-theme="light"] .venue-card::before {
+    background: radial-gradient(circle, rgba(201,168,76,.12), transparent 70%);
 }
 
 .venue-badge {
@@ -782,13 +723,18 @@ body {
 }
 
 [data-theme="light"] .map-wrapper {
-    border-color: rgba(180,140,50,.2);
+    border-color: rgba(180,140,50,.25);
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
 }
 
 .map-wrapper iframe {
     width: 100%;
     height: 100%;
     filter: grayscale(20%) sepia(10%);
+}
+
+[data-theme="light"] .map-wrapper iframe {
+    filter: grayscale(0%) sepia(8%);
 }
 
 .directions-btn {
@@ -808,7 +754,8 @@ body {
 }
 
 [data-theme="light"] .directions-btn {
-    color: #FBF6EE;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(140,100,20,.35);
 }
 
 .directions-btn:hover {
@@ -833,8 +780,9 @@ body {
 }
 
 [data-theme="light"] .wish-form-card {
-    border-color: rgba(180,140,50,.2);
-    box-shadow: 0 4px 28px rgba(0,0,0,.07);
+    background: linear-gradient(145deg, #fffdf7 0%, #fff9ec 100%);
+    border-color: rgba(180,140,50,.25);
+    box-shadow: 0 6px 32px rgba(140,100,20,.1);
 }
 
 .wish-form-card h3 {
@@ -845,7 +793,7 @@ body {
 }
 
 .wish-form-card input,
-.wish-form-card textarea {
+.wish-form-card textarea, input {
     width: 100%;
     background: var(--input-bg);
     border: 1px solid var(--input-border);
@@ -860,13 +808,13 @@ body {
 }
 
     .wish-form-card input::placeholder,
-    .wish-form-card textarea::placeholder {
+    .wish-form-card textarea::placeholder, input::placeholder {
         color: var(--text-secondary);
         opacity: .6;
     }
 
     .wish-form-card input:focus,
-    .wish-form-card textarea:focus {
+    .wish-form-card textarea:focus, input:focus {
         border-color: var(--gold);
         box-shadow: 0 0 0 3px rgba(192,132,252,.12);
     }
@@ -968,7 +916,7 @@ body {
 
 .wish-card {
     background: var(--card-bg);
-    border-radius: 24px;
+    border-radius: 0px;
     padding: 0;
     border: 1px solid rgba(192,132,252,.18);
     transition: var(--tr);
@@ -978,14 +926,20 @@ body {
 }
 
 [data-theme="light"] .wish-card {
-    border-color: rgba(180,140,50,.2);
-    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    background: linear-gradient(145deg, #fff 0%, #fffaf0 100%);
+    border-color: rgba(180,140,50,.25);
+    box-shadow: 0 4px 20px rgba(140,100,20,.09), 0 1px 4px rgba(0,0,0,.04);
 }
 
 .wish-card:hover {
     transform: translateY(-6px);
     border-color: rgba(192,132,252,.5);
     box-shadow: var(--glow);
+}
+
+[data-theme="light"] .wish-card:hover {
+    border-color: rgba(180,140,50,.5);
+    box-shadow: 0 8px 28px rgba(140,100,20,.16);
 }
 /* top accent stripe */
 .wish-card::before {
@@ -996,6 +950,10 @@ body {
 }
 
 .wish-card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1.5rem 1.6rem 1.2rem;
 }
 
@@ -1056,8 +1014,10 @@ body {
 }
 
 [data-theme="light"] .wc-message {
-    background: rgba(201,168,76,.07);
+    background: rgba(201,168,76,.08);
     border-left-color: var(--gold3);
+    color: var(--text-light-primary);
+    opacity: 1;
 }
 
 [data-lang="ar"] .wc-message {
@@ -1500,12 +1460,15 @@ body {
    PARTICLES
    ====================================================== */
 .petal {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1;
-    font-size: 1.1rem;
-    opacity: .4;
-    animation: petalFall linear infinite;
+    position: fixed;          /* stays relative to viewport */
+    top: -30px;               /* start above the screen */
+    left: 0;                  /* will be overridden by inline style */
+    font-size: 1.2rem;
+    pointer-events: none;     /* so they don’t block clicks */
+    z-index: 9999;
+    animation-name: petalFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 
 @keyframes petalFall {
@@ -1596,3 +1559,105 @@ body {
         right: .2rem;
     }
 }
+
+.wishes-controls{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.wishes-controls input,
+.wishes-controls select{
+    padding:10px;
+    border-radius:10px;
+}
+
+.wishes-controls button{
+    padding:10px 16px;
+    cursor:pointer;
+}
+
+.wishes-controls button.active{
+    background:#7e22ce;
+    color:#fff;
+}
+
+.wishes-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.wishes-table th,
+.wishes-table td{
+    padding:12px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.wishes-table th{
+    background:#7e22ce;
+    color:#fff;
+}
+
+#pagination{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+}
+
+#pagination button{
+    width:40px;
+    height:40px;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+#pagination button.active{
+    background:#7e22ce;
+    color:white;
+}
+
+#cards-view-btn {
+    background-color: #7e22ce;
+    border: 1px solid transparent;
+    transition: 0.3s linear;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    &:hover {
+        background-color: transparent;
+        border-color: #7e22ce;
+        color: #7e22ce;
+    }
+}
+
+#table-view-btn {
+    border: 1px #7e22ce solid;
+    background-color: transparent;
+    color: #7e22ce;
+    transition: 0.3s linear;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #7e22ce;
+        border: 1px solid transparent;
+        color: #fff;
+    }
+}
+
+#wishes-container {
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+table.wishes-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+

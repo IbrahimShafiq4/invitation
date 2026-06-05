@@ -612,6 +612,10 @@ document.getElementById('lightbox').addEventListener('click', e => { if (e.targe
 
 // ======================== WISHES — Firebase REST ========================
 let selectedEmoji = '💕';
+let allWishes = [];
+let currentPage = 1;
+let itemsPerPage = 6;
+let currentView = 'cards';
 const EMOJI_OPTIONS = ['💕', '💍', '🌹', '🥂', '✨', '🎊', '🌸', '🤲'];
 const emojiRow = document.getElementById('emoji-row');
 
@@ -658,67 +662,344 @@ document.getElementById('submit-wish').addEventListener('click', async () => {
 function formatTimestamp(ts) {
     if (!ts) return '';
     const d = new Date(ts);
-    return d.toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    return d.toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-GB', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
 }
 
 async function loadWishes() {
-    const wall = document.getElementById('wishes-wall');
-    wall.innerHTML = `<div class="wall-loading">✨ ${t('loading_wishes')}</div>`;
+
+    const container =
+        document.getElementById('wishes-container');
+
+    container.innerHTML =
+        `<div class="wall-loading">
+            ✨ ${t('loading_wishes')}
+        </div>`;
+
     try {
-        const res = await fetch(`${FIREBASE_URL}.json`);
-        if (!res.ok) throw new Error();
+
+        const res =
+            await fetch(`${FIREBASE_URL}.json`);
+
+        if (!res.ok)
+            throw new Error();
+
         const data = await res.json();
 
-        if (!data || Object.keys(data).length === 0) {
-            wall.innerHTML = `<div class="wall-loading">✨ ${t('no_wishes')} ✨</div>`;
+        if (!data) {
+
+            container.innerHTML =
+                `<div class="wall-loading">
+                    ✨ ${t('no_wishes')}
+                </div>`;
+
             return;
         }
 
-        const wishes = Object.entries(data)
-            .map(([id, val]) => ({ id, ...val }))
-            .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+        allWishes = Object.entries(data)
+            .map(([id, val]) => ({
+                id,
+                ...val
+            }));
 
-        wall.innerHTML = '';
-        wishes.forEach(wish => {
-            const card = document.createElement('div');
-            card.className = 'wish-card';
-            // Avatar initial (first letter of name)
-            const initial = [...wish.name.trim()][0] || '?';
-            card.innerHTML = `
-        <div class="wish-card-body">
-          <div class="wc-header">
-            <div class="wc-left">
-              <div class="wc-avatar">${initial}</div>
-              <strong class="wc-name">${escapeHtml(wish.name)}</strong>
-            </div>
-            <span class="wc-emoji">${wish.emoji || '💕'}</span>
-          </div>
-          <p class="wc-message">${escapeHtml(wish.message)}</p>
-          <div class="wc-footer">
-            <span class="wc-timestamp">${formatTimestamp(wish.timestamp)}</span>
-            <button class="wc-delete" data-id="${wish.id}">🗑️ ${t('delete_btn')}</button>
-          </div>
-        </div>`;
-            wall.appendChild(card);
-        });
+        renderWishes();
 
-        document.querySelectorAll('.wc-delete').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                if (!confirm(t('delete_confirm'))) return;
-                try {
-                    await fetch(`${FIREBASE_URL}/${btn.dataset.id}.json`, { method: 'DELETE' });
-                    loadWishes();
-                } catch { /* ignore */ }
-            });
-        });
-    } catch {
-        wall.innerHTML = `<div class="wall-loading">⚠️ ${t('error_wishes')}</div>`;
     }
+    catch {
+
+        container.innerHTML =
+            `<div class="wall-loading">
+                ⚠️ ${t('error_wishes')}
+            </div>`;
+    }
+}
+
+function renderWishes() {
+
+    let filtered = [...allWishes];
+
+    const search =
+        document.getElementById('wish-search')
+            ?.value
+            ?.toLowerCase() || '';
+
+    if (search) {
+
+        filtered = filtered.filter(w =>
+            w.name.toLowerCase().includes(search) ||
+            w.message.toLowerCase().includes(search)
+        );
+    }
+
+    const sort =
+        document.getElementById('wish-sort')?.value;
+
+    filtered.sort((a, b) => {
+
+        if (sort === 'oldest')
+            return (a.timestamp || 0) -
+                (b.timestamp || 0);
+
+        return (b.timestamp || 0) -
+            (a.timestamp || 0);
+    });
+
+    const start =
+        (currentPage - 1) * itemsPerPage;
+
+    const paginated =
+        filtered.slice(
+            start,
+            start + itemsPerPage
+        );
+
+    if (currentView === 'cards')
+        renderCards(paginated);
+    else
+        renderTable(paginated);
+
+    renderPagination(filtered.length);
+}
+
+function renderCards(wishes) {
+
+    const container =
+        document.getElementById('wishes-container');
+
+    container.innerHTML = '';
+
+    wishes.forEach(wish => {
+
+        const initial =
+            [...wish.name.trim()][0] || '?';
+
+        const card =
+            document.createElement('div');
+
+        card.className = 'wish-card';
+
+        card.innerHTML = `
+            <div class="wish-card-body">
+
+                <div class="wc-header">
+
+                    <div class="wc-left">
+
+                        <div class="wc-avatar">
+                            ${initial}
+                        </div>
+
+                        <strong>
+                            ${escapeHtml(wish.name)}
+                        </strong>
+
+                    </div>
+
+                    <span>
+                        ${wish.emoji || '💕'}
+                    </span>
+
+                </div>
+
+                <p class="wc-message">
+                    ${escapeHtml(wish.message)}
+                </p>
+
+                <div class="wc-footer">
+
+                    <span>
+                        ${formatTimestamp(wish.timestamp)}
+                    </span>
+
+                    <button
+                        class="wc-delete"
+                        data-id="${wish.id}">
+                        🗑️
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+
+    bindDeleteButtons();
+}
+
+function renderTable(wishes) {
+
+    const container =
+        document.getElementById('wishes-container');
+
+    container.innerHTML = `
+        <table class="wishes-table">
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Emoji</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                ${wishes.map(wish => `
+
+                <tr>
+
+                    <td>
+                        ${escapeHtml(wish.name)}
+                    </td>
+
+                    <td>
+                        ${wish.emoji || '💕'}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(wish.message)}
+                    </td>
+
+                    <td>
+                        ${formatTimestamp(wish.timestamp)}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="wc-delete"
+                            data-id="${wish.id}">
+                            🗑️
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                `).join('')}
+
+            </tbody>
+
+        </table>
+    `;
+
+    bindDeleteButtons();
+}
+
+function renderPagination(totalItems) {
+
+    const pages =
+        Math.ceil(totalItems / itemsPerPage);
+
+    const pagination =
+        document.getElementById('pagination');
+
+    pagination.innerHTML = '';
+
+    for (let i = 1; i <= pages; i++) {
+
+        const btn =
+            document.createElement('button');
+
+        btn.textContent = i;
+
+        if (i === currentPage)
+            btn.classList.add('active');
+
+        btn.onclick = () => {
+
+            currentPage = i;
+
+            renderWishes();
+        };
+
+        pagination.appendChild(btn);
+    }
+}
+
+function bindDeleteButtons() {
+
+    document
+        .querySelectorAll('.wc-delete')
+        .forEach(btn => {
+
+            btn.onclick = async () => {
+
+                if (
+                    !confirm(
+                        t('delete_confirm')
+                    )
+                ) return;
+
+                try {
+
+                    await fetch(
+                        `${FIREBASE_URL}/${btn.dataset.id}.json`,
+                        {
+                            method: 'DELETE'
+                        }
+                    );
+
+                    loadWishes();
+
+                }
+                catch {
+
+                }
+            };
+        });
 }
 
 function escapeHtml(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+
+document
+    .getElementById('cards-view-btn')
+    ?.addEventListener('click', () => {
+
+        currentView = 'cards';
+
+        renderWishes();
+    });
+
+document
+    .getElementById('table-view-btn')
+    ?.addEventListener('click', () => {
+
+        currentView = 'table';
+
+        renderWishes();
+    });
+
+document
+    .getElementById('wish-search')
+    ?.addEventListener('input', () => {
+
+        currentPage = 1;
+
+        renderWishes();
+    });
+
+document
+    .getElementById('wish-sort')
+    ?.addEventListener('change', () => {
+
+        renderWishes();
+    });
+
 loadWishes();
 
 // ======================== MUSIC ========================
@@ -763,7 +1044,7 @@ function spawnParticle() {
     p.style.left = Math.random() * 100 + 'vw';
     const dur = 6 + Math.random() * 9;
     p.style.animationDuration = dur + 's';
-    p.style.fontSize = (.6 + Math.random() * .9) + 'rem';
+    p.style.fontSize = (2 + Math.random() * .9) + 'rem';
     document.body.appendChild(p);
     setTimeout(() => p.remove(), dur * 1000 + 500);
     setTimeout(spawnParticle, 900 + Math.random() * 900);
