@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark" data-lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Ahmed & Basmala — Eternal Union · June 26, 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -12,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Single full-page 3D canvas (fixed behind everything) -->
@@ -25,8 +29,10 @@
     <!-- Creative Controller -->
     <div id="ctrl-panel">
         <p class="ctrl-title">✦ CREATIVE ATMOSPHERE ✦</p>
-        <div class="ctrl-group"><label>Font size</label><input type="range" id="ctrl-fs" min="14" max="28" value="18" class="ctrl-range"></div>
-        <div class="ctrl-group"><label>Heading spacing</label><input type="range" id="ctrl-ls" min="0" max="40" value="8" class="ctrl-range"></div>
+        <div class="ctrl-group"><label>Font size</label><input type="range" id="ctrl-fs" min="14" max="28" value="18"
+                class="ctrl-range"></div>
+        <div class="ctrl-group"><label>Heading spacing</label><input type="range" id="ctrl-ls" min="0" max="40"
+                value="8" class="ctrl-range"></div>
         <div class="ctrl-group">
             <label>Heading font</label>
             <select id="ctrl-font-h" class="ctrl-select">
@@ -47,10 +53,14 @@
         <div class="ctrl-group">
             <label>Accent color</label>
             <div class="ctrl-color-row">
-                <div class="ctrl-swatch active" style="background:#C084FC" data-gold="#C084FC" data-gold2="#D8B4FE" data-gold3="#7E22CE" data-gold4="#A855F7" title="Purple"></div>
-                <div class="ctrl-swatch" style="background:#C08080" data-gold="#C08080" data-gold2="#E8B4B4" data-gold3="#8B4040" data-gold4="#B06060" title="Rose"></div>
-                <div class="ctrl-swatch" style="background:#80B8C8" data-gold="#80B8C8" data-gold2="#B4D8E8" data-gold3="#307090" data-gold4="#5098B8" title="Aqua"></div>
-                <div class="ctrl-swatch" style="background:#C9A84C" data-gold="#C9A84C" data-gold2="#E8D18A" data-gold3="#8B6914" data-gold4="#B8922A" title="Gold"></div>
+                <div class="ctrl-swatch active" style="background:#C084FC" data-gold="#C084FC" data-gold2="#D8B4FE"
+                    data-gold3="#7E22CE" data-gold4="#A855F7" title="Purple"></div>
+                <div class="ctrl-swatch" style="background:#C08080" data-gold="#C08080" data-gold2="#E8B4B4"
+                    data-gold3="#8B4040" data-gold4="#B06060" title="Rose"></div>
+                <div class="ctrl-swatch" style="background:#80B8C8" data-gold="#80B8C8" data-gold2="#B4D8E8"
+                    data-gold3="#307090" data-gold4="#5098B8" title="Aqua"></div>
+                <div class="ctrl-swatch" style="background:#C9A84C" data-gold="#C9A84C" data-gold2="#E8D18A"
+                    data-gold3="#8B6914" data-gold4="#B8922A" title="Gold"></div>
             </div>
         </div>
         <div class="ctrl-group">
@@ -78,7 +88,8 @@
                 <option value="spheres">Floating Spheres</option>
             </select>
         </div>
-        <div class="ctrl-group"><label>Song speed</label><input type="range" id="ctrl-speed" min="0.5" max="2" step="0.05" value="1" class="ctrl-range"></div>
+        <div class="ctrl-group"><label>Song speed</label><input type="range" id="ctrl-speed" min="0.5" max="2"
+                step="0.05" value="1" class="ctrl-range"></div>
     </div>
 
     <!-- Music -->
@@ -127,18 +138,24 @@
             <p class="hero-date-text" id="t-date-text">Friday, the Twenty-Sixth of June</p>
             <p class="hero-year">2026</p>
             <div class="countdown-wrap">
-                <div class="countdown-item"><span class="cdown-num" id="cd-days">00</span><span class="cdown-lbl" id="t-cd-days">Days</span></div>
+                <div class="countdown-item"><span class="cdown-num" id="cd-days">00</span><span class="cdown-lbl"
+                        id="t-cd-days">Days</span></div>
                 <span class="cdown-sep">·</span>
-                <div class="countdown-item"><span class="cdown-num" id="cd-hours">00</span><span class="cdown-lbl" id="t-cd-hours">Hours</span></div>
+                <div class="countdown-item"><span class="cdown-num" id="cd-hours">00</span><span class="cdown-lbl"
+                        id="t-cd-hours">Hours</span></div>
                 <span class="cdown-sep">·</span>
-                <div class="countdown-item"><span class="cdown-num" id="cd-minutes">00</span><span class="cdown-lbl" id="t-cd-minutes">Minutes</span></div>
+                <div class="countdown-item"><span class="cdown-num" id="cd-minutes">00</span><span class="cdown-lbl"
+                        id="t-cd-minutes">Minutes</span></div>
                 <span class="cdown-sep">·</span>
-                <div class="countdown-item"><span class="cdown-num" id="cd-seconds">00</span><span class="cdown-lbl" id="t-cd-seconds">Seconds</span></div>
+                <div class="countdown-item"><span class="cdown-num" id="cd-seconds">00</span><span class="cdown-lbl"
+                        id="t-cd-seconds">Seconds</span></div>
             </div>
         </div>
         <div class="scroll-cue">
             <span class="scroll-cue-text" id="t-scroll">Scroll</span>
-            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
         </div>
     </section>
 
@@ -150,20 +167,42 @@
             <div class="gold-rule"></div>
             <div class="details-grid">
                 <div class="detail-card">
-                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg></div>
-                    <p class="dc-label" id="t-dc-date-lbl">Date</p><p class="dc-value">June 26, 2026</p><p class="dc-sub" id="t-dc-date-sub">Friday</p>
+                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg></div>
+                    <p class="dc-label" id="t-dc-date-lbl">Date</p>
+                    <p class="dc-value">June 26, 2026</p>
+                    <p class="dc-sub" id="t-dc-date-sub">Friday</p>
                 </div>
                 <div class="detail-card">
-                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg></div>
-                    <p class="dc-label" id="t-dc-time-lbl">Time</p><p class="dc-value">7:00 PM</p><p class="dc-sub" id="t-dc-time-sub">Doors open 6:30 PM</p>
+                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg></div>
+                    <p class="dc-label" id="t-dc-time-lbl">Time</p>
+                    <p class="dc-value">7:00 PM</p>
+                    <p class="dc-sub" id="t-dc-time-sub">Doors open 6:30 PM</p>
                 </div>
                 <div class="detail-card">
-                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg></div>
-                    <p class="dc-label" id="t-dc-dress-lbl">Dress Code</p><p class="dc-value" id="t-dc-dress-val">Lights Pastel Colors</p><p class="dc-sub" id="t-dc-dress-sub">🥰 Soft & Elegant</p>
+                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg></div>
+                    <p class="dc-label" id="t-dc-dress-lbl">Dress Code</p>
+                    <p class="dc-value" id="t-dc-dress-val">Lights Pastel Colors</p>
+                    <p class="dc-sub" id="t-dc-dress-sub">🥰 Soft & Elegant</p>
                 </div>
                 <div class="detail-card">
-                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon"><circle cx="12" cy="8" r="4" /><path d="M6 20v-2a6 6 0 0 1 12 0v2" /></svg></div>
-                    <p class="dc-label" id="t-dc-host-lbl">Hosted By</p><p class="dc-value">Ahmed & Basmala</p><p class="dc-sub" id="t-dc-host-sub">& Their Families</p>
+                    <div class="dc-icon-wrap"><svg viewBox="0 0 24 24" class="dc-icon">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
+                        </svg></div>
+                    <p class="dc-label" id="t-dc-host-lbl">Hosted By</p>
+                    <p class="dc-value">Ahmed & Basmala</p>
+                    <p class="dc-sub" id="t-dc-host-sub">& Their Families</p>
                 </div>
             </div>
         </div>
@@ -183,7 +222,9 @@
     <section class="section quote-section">
         <div class="section-inner quote-inner">
             <div class="quote-ornament">❝</div>
-            <blockquote class="wedding-quote" id="t-verse">And among His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.</blockquote>
+            <blockquote class="wedding-quote" id="t-verse">And among His signs is that He created for you from
+                yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.
+            </blockquote>
             <p class="quote-source" id="t-verse-source">— Quran 30:21</p>
             <div class="quote-ornament flip">❞</div>
         </div>
@@ -199,12 +240,17 @@
                 <div class="venue-card">
                     <p class="venue-badge" id="t-venue-badge">📍 Ceremony & Reception</p>
                     <h3 class="venue-name" id="t-venue-name">7 Sky Hall</h3>
-                    <p class="venue-address" id="t-venue-addr">Vehicles House, تقاطع صلاح سالم<br>شارع السكة البيضاء، Cairo</p>
-                    <div class="venue-meta"><span>🌹 Grand Ballroom</span><span>🕕 Doors 6:30 · Starts 7:00 PM</span></div>
-                    <a href="https://maps.app.goo.gl/TkrLZobxQX5pEpx56?g_st=aw" target="_blank" class="directions-btn" id="t-directions">↗ Get Directions</a>
+                    <p class="venue-address" id="t-venue-addr">Vehicles House, تقاطع صلاح سالم<br>شارع السكة البيضاء،
+                        Cairo</p>
+                    <div class="venue-meta"><span>🌹 Grand Ballroom</span><span>🕕 Doors 6:30 · Starts 7:00 PM</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/TkrLZobxQX5pEpx56?g_st=aw" target="_blank" class="directions-btn"
+                        id="t-directions">↗ Get Directions</a>
                 </div>
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.9!2d31.3397!3d30.0626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa1e1fbdf13:0xf09bac0f4c3e78d1!2s7%20Sky%20Hall%20in%20Vehicles%20House!5e0!3m2!1sen!2seg!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.9!2d31.3397!3d30.0626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa1e1fbdf13:0xf09bac0f4c3e78d1!2s7%20Sky%20Hall%20in%20Vehicles%20House!5e0!3m2!1sen!2seg!4v1700000000000"
+                        allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -224,9 +270,28 @@
                 <button id="submit-wish" class="submit-btn">Send Wish →</button>
                 <div id="form-message" class="form-message hidden"></div>
             </div>
-            <div class="wishes-wall" id="wishes-wall">
-                <div class="wall-loading">✨ Loading wishes...</div>
+            <div class="wishes-controls">
+
+                <input type="text" id="wish-search" style="width: fit-content; flex-grow: 1;" placeholder="Search wishes...">
+
+                <select id="wish-sort" class="ctrl-select" style="width: fit-content;">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+
+                <button id="cards-view-btn" class="active">
+                    Cards
+                </button>
+
+                <button id="table-view-btn">
+                    Table
+                </button>
+
             </div>
+
+            <div id="wishes-container"></div>
+
+            <div id="pagination"></div>
         </div>
     </section>
 
@@ -238,4 +303,5 @@
 
     <script type="module" src="main.js"></script>
 </body>
+
 </html>
